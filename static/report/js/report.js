@@ -616,7 +616,7 @@
           data.sgv.sort(function(a, b) { return a.mills - b.mills; });
           var lastDate = 0;
           data.sgv = data.sgv.filter(function(d) {
-            var ok = (lastDate + ONE_MIN_IN_MS) < d.mills;
+            var ok = (lastDate + ONE_MIN_IN_MS) <= d.mills;
             lastDate = d.mills;
             return ok;
           });
